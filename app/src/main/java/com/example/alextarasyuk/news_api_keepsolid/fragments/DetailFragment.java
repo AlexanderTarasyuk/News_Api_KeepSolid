@@ -16,7 +16,7 @@ import com.example.alextarasyuk.news_api_keepsolid.database.Constants;
 /**
  * Created by AlexTarasyuk
  */
-
+//landscaping fragment
 public class DetailFragment extends Fragment {
 
     private WebView articleDetail;

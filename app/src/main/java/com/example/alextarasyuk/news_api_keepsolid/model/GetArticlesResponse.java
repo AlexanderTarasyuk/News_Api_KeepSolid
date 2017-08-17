@@ -56,4 +56,36 @@ public class GetArticlesResponse {
         this.news = news;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GetArticlesResponse that = (GetArticlesResponse) o;
+
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (source != null ? !source.equals(that.source) : that.source != null) return false;
+        if (sortBy != null ? !sortBy.equals(that.sortBy) : that.sortBy != null) return false;
+        return news != null ? news.equals(that.news) : that.news == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = status != null ? status.hashCode() : 0;
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        result = 31 * result + (sortBy != null ? sortBy.hashCode() : 0);
+        result = 31 * result + (news != null ? news.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "GetArticlesResponse{" +
+                "status='" + status + '\'' +
+                ", source='" + source + '\'' +
+                ", sortBy='" + sortBy + '\'' +
+                ", news=" + news +
+                '}';
+    }
 }

@@ -17,6 +17,8 @@ public class NewsApi {
 
     private static NewsService newsService = null;
 
+    //
+
     public static NewsService getApi() {
         if (newsService == null) {
             //initialize NewsService

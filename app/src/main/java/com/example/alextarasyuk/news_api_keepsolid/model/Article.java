@@ -78,4 +78,44 @@ public class Article  {
         this.publishedAt = publishedAt;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Article article = (Article) o;
+
+        if (author != null ? !author.equals(article.author) : article.author != null) return false;
+        if (title != null ? !title.equals(article.title) : article.title != null) return false;
+        if (description != null ? !description.equals(article.description) : article.description != null)
+            return false;
+        if (url != null ? !url.equals(article.url) : article.url != null) return false;
+        if (urlToImage != null ? !urlToImage.equals(article.urlToImage) : article.urlToImage != null)
+            return false;
+        return publishedAt != null ? publishedAt.equals(article.publishedAt) : article.publishedAt == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = author != null ? author.hashCode() : 0;
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (url != null ? url.hashCode() : 0);
+        result = 31 * result + (urlToImage != null ? urlToImage.hashCode() : 0);
+        result = 31 * result + (publishedAt != null ? publishedAt.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "author=" + author +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
+                ", urlToImage='" + urlToImage + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                '}';
+    }
 }

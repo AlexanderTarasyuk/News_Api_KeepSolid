@@ -24,7 +24,7 @@ import com.example.alextarasyuk.news_api_keepsolid.utils.Util;
 /**
  * Created by AlexTarasyuk
  */
-
+//main fragment
 public class MainFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, SwipeRefreshLayout.OnRefreshListener {
 
     private FragmentManager fm;

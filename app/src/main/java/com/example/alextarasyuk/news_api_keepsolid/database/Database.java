@@ -30,21 +30,25 @@ public class Database {
         mDataBase = mDBHelper.getWritableDatabase();
     }
 
+    //closing DB
     public void close() {
         if (mDBHelper != null) {
             mDBHelper.close();
         }
     }
 
+    //getting data
     public Cursor getAllData() {
         return mDataBase.query(Constants.DB_TABLE_NAME, null, null,
                 null, null, null, Constants.COLUMN_ID_PRIMARY + " DESC");
     }
 
+    //clear DB
     public void clearData() {
         mDataBase.delete(Constants.DB_TABLE_NAME, null, null);
     }
 
+    //adding data
     private void addNews(Article news) {
         ContentValues cv = new ContentValues();
         cv.put(Constants.COLUMN_NAME, news.getTitle());
@@ -53,6 +57,8 @@ public class Database {
         mDataBase.insert(Constants.DB_TABLE_NAME, null, cv);
     }
 
+
+    //addin data from list
     public void addApiData(List<Article> news) {
         if (news.size() != 0) {
             for (int i = news.size() - 1; i >= 0; i--) {

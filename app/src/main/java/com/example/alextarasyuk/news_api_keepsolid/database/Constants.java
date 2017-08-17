@@ -7,9 +7,7 @@ package com.example.alextarasyuk.news_api_keepsolid.database;
 public class Constants {
 
     public final static int LOADER_ID = 1;
-
     public final static String URL_KEY = "URL_KEY";
-
     public final static String DB_NAME = "news_db";
     public final static String DB_TABLE_NAME = "news";
     public final static String COLUMN_ID_PRIMARY = "_id";
